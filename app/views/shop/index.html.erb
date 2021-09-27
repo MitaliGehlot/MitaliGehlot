@@ -1,0 +1,12 @@
+<h1 style="text-align: center;">The Online Fashion Shopping Website</h1>
+<ul>
+  <% @categories.each do |category| %>
+    <li>     
+     <a href="/categories/<%= category.id %>">
+
+    <%= link_to category.category_name, category %>
+
+       </a>
+    </li>
+  <% end %>
+</ul>
