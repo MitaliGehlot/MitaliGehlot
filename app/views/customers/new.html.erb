@@ -1,0 +1,31 @@
+</p><h1>Signup form</h1>
+
+<%= form_with model: @customer do |form| %>
+  <div>
+    <%= form.label :f_name %><br>
+    <%= form.text_field :f_name %>
+  </div>
+
+  <div>
+    <%= form.label :last_name %><br>
+    <%= form.text_field :last_name %>
+  </div>
+
+   <div>
+    <%= form.label :address %><br>
+    <%= form.text_area :address %>
+  </div>
+   <div>
+    <%= form.label :email_id %><br>
+    <%= form.text_area :email_id %>
+  </div>
+   <div>
+    <%= form.label :password %><br>
+    <%= form.text_area :password %>
+  </div>
+  <%= form.radio_button :gender, "male" %>
+<%= form.label :gender_male, "male" %>
+<%= form.radio_button :gender, "female" %>
+<%= form.label :gender_female, "female" %>
+</div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_27_101433) do
+ActiveRecord::Schema.define(version: 2021_09_28_132453) do
 
   create_table "cards", force: :cascade do |t|
     t.integer "card_id"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2021_09_27_101433) do
   end
 
   create_table "categories", force: :cascade do |t|
-    t.integer "category_id"
     t.string "category_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -37,13 +36,22 @@ ActiveRecord::Schema.define(version: 2021_09_27_101433) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "products", force: :cascade do |t|
-    t.integer "p_id"
-    t.float "p_price"
-    t.string "p_name"
-    t.text "p_model"
+  create_table "payments", force: :cascade do |t|
+    t.float "amount"
+    t.string "payment_type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "products", force: :cascade do |t|
+    t.float "price"
+    t.string "name"
+    t.text "model"
+    t.integer "category_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
+  end
+
+  add_foreign_key "products", "categories"
 end
