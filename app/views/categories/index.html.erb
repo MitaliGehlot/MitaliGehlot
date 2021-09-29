@@ -1,16 +1,15 @@
 <h1 style="text-align: center;">The Online Fashion Shopping Website</h1>
+
+<%= link_to "User signup", new_customer_path %>
 <ul>
   <% @categories.each do |category| %>
     <li>     
      <a href="/categories/<%= category.id %>">
 
     <%= link_to category.category_name, category %>
+      </a>
+</li>
 
-       </a>
-    </li>
-
-  <% end %>
+   <% end %>
 </ul>
-
-
 

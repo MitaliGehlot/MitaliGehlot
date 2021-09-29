@@ -1,5 +1,12 @@
-<h1><%= @products.name %></h1>
+<p><% products=@category.products%>
 
-<p><%= @categories.id %></p>
-<h1><% @customers%> </h1>
+<p><%= @category.category_name %></p>
+<ul>
+  <% products.each do |product| %>
+    <li>     
+      <%= product.id %>
+      <%= link_to product.name, category_product_path(product) %>
+     </li>
 
+   <% end %>
+</ul>

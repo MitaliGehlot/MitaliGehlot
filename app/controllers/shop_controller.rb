@@ -4,6 +4,6 @@ class ShopController < ApplicationController
   end
   def show
   @categories = Category.find(params[:id])
-
-  end
+   end
 end
+

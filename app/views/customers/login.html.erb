@@ -1,0 +1,13 @@
+  <h1>Login form<h1>
+    <%= form_with model: @customer do |form| %>
+  <div>
+    <%= form.label :email_id %><br>
+    <%= form.text_area :email_id %>
+  </div>
+   <div >
+    <%= form.label :password %><br>
+    <%= form.text_area :password %>
+  </div>
+   <div>
+    <%= form.submit %>
+  </div>
