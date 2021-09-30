@@ -1,12 +1,14 @@
 <p><% products=@category.products%>
+<%= link_to "New Product", new_category_product_path(@category) %>
 
 <p><%= @category.category_name %></p>
 <ul>
   <% products.each do |product| %>
     <li>     
       <%= product.id %>
-      <%= link_to product.name, category_product_path(product) %>
-     </li>
-
-   <% end %>
+      <%= link_to product.name, category_product_path(@category, product) %>
+     </li
 </ul>
+    <% end %>
+ 
+  

@@ -1,11 +1,12 @@
 class CustomersController < ApplicationController
   def new
   end
+
   def show
     @customer =Customer.new
-
   end
-    def create
+    
+  def create
     @customer = Customer.new(article_params)
 
     if @customer.save
@@ -14,13 +15,13 @@ class CustomersController < ApplicationController
       render :new
     end
   end
-    def edit
+
+  def edit
     @customer = Customer.find(params[:id])
   end
 
   def update
     @customer = Customer.find(params[:id])
-
     if @customer.update(customer_params)
       redirect_to @customer
     else

@@ -1,0 +1,19 @@
+<%= link_to "New Product", new_category_product_path(@category) %>
+All Producs:
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <a href="/products/<%= product.id %>">
+          <%= product.name %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+
+<ul>
+  <li><%= link_to "Edit", edit_category_path(@product) %></li>
+  <li><%= link_to "Destroy", category_product_path(@product)
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+</ul>

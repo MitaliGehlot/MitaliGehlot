@@ -1,0 +1,12 @@
+<h1><%= @product.name %></h1>
+
+<p><%= @product.price%></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_category_product_path(@category, @product)  %>
+  	<li><%= link_to "Destroy", category_product_path(@category,@product),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %></li>
+  </li>
+</ul>
+

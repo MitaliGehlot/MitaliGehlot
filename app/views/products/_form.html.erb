@@ -1,0 +1,21 @@
+
+
+<%= form_with model: [@category, @product] do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :price %><br>
+    <%= form.text_field :price %>
+  </div>
+
+   <div>
+    <%= form.label :model %><br>
+    <%= form.text_area :model %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
