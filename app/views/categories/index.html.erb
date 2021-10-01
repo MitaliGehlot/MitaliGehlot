@@ -1,7 +1,8 @@
 <h1 style="text-align: center;">The Online Fashion Shopping Website</h1>
 
 <%= link_to "User signup", new_customer_path %>
-
+<%= link_to "Add category",new_category_path %>  
+</ul>
 <ul>
   <% @categories.each do |category| %>
     <li>     
@@ -10,7 +11,7 @@
     <%= link_to category.category_name, category %>
       </a>
 </li>
-
-   <% end %>
+  <% end %>
 </ul>
+
 
