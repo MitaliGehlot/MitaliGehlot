@@ -1,17 +1,19 @@
-<h1 style="text-align: center;">The Online Fashion Shopping Website</h1>
 
-<%= link_to "User signup", new_customer_path %>
-<%= link_to "Add category",new_category_path %>  
-</ul>
+<%= link_to "add category", new_category_path %>
+
 <ul>
   <% @categories.each do |category| %>
     <li>     
-     <a href="/categories/<%= category.id %>">
+      <%= link_to category.category_name, category %>
+      <%= link_to "Edit ", edit_category_path(category) %>
+      <%= link_to "Destroy", category_path(category), method: :delete %>
 
-    <%= link_to category.category_name, category %>
       </a>
-</li>
+    </li>
   <% end %>
 </ul>
+
+
+
 
 

@@ -1,3 +1,3 @@
 class Payment < ApplicationRecord
-  belongs_to :customers
+  @payment = Payment.new
 end

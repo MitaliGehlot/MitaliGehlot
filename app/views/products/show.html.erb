@@ -1,12 +1,17 @@
-<h1><%= @product.name %></h1>
-
-<p><%= @product.price%></p>
 
 <ul>
-  <li><%= link_to "Edit", edit_category_product_path(@category, @product)  %>
-  	<li><%= link_to "Destroy", category_product_path(@category,@product),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %></li>
+<li>
+   <p><%= @product.name %>
+
+
+     Rs. <%= @product.price %>
+   <%= link_to "purchase", new_payment_path(@payment) %>
+  <%= link_to "order",   new_product_order_path(@product) %>
+      <%= link_to " Edit ",  edit_product_order_path(@product) %>
+            <%= link_to "Destroy", product_order_path(@product), method: :delete , data: { confirm: "Are you sure?" } %>
+
+                </li>
+  </p>                
   </li>
 </ul>
 

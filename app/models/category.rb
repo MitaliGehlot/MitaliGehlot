@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
-	@category = Category.new
+	validates :category_name, presence: true
+    @category = Category.new
 	has_many :products,dependent: :destroy
 end
