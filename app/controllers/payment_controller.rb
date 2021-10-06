@@ -1,18 +1,14 @@
 class PaymentController < ApplicationController
   def index
-    @payment = Payment.all
+   @payment = Payment.all
   end
-
   def show
-    @payment = Payment.find(params[:id])
+   @payment = Payment.find(params[:id]) 
   end
-
-  def new
-    @payment = Payment.new
-  end
+ 
 
   def create
-    @payment = Payment.new(amount: "...", Payment_type: "...")
+    @payment = Payment.new(payment_type: "...", amount: "...")
 
     if @payment.save
       redirect_to @payment
@@ -21,8 +17,22 @@ class PaymentController < ApplicationController
     end
   end
 
-  private
+   def edit
+    @payment = Payment.find(params[:id])
+  end
+
+  def update
+    @payment = Payment.find(params[:id])
+
+    if @payment.update(payment_params)
+      redirect_to @payment
+    else
+      render :edit
+    end
+ end
+    private
     def payment_params
-      params.require(:payment).permit(:amount, :Payment_type)
+      params.require(:payment).permit(:payment_type, :amount)
     end
 end
+

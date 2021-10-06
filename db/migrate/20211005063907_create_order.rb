@@ -2,6 +2,8 @@ class CreateOrder < ActiveRecord::Migration[6.1]
   def change
     create_table :orders do |t|
       t.datetime :date
+      
+
       t.references :customer, index: true
       t.references :product, index: true
       t.timestamps

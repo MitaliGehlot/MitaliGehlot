@@ -6,7 +6,9 @@
 
      Rs. <%= @product.price %>
    <%= link_to "purchase", new_payment_path(@payment) %>
-  <%= link_to "order",   new_product_order_path(@product) %>
+
+   <%= link_to "card" , new_card_path(@card) %>
+   <%= link_to "order",   new_product_order_path(@product) %>
       <%= link_to " Edit ",  edit_product_order_path(@product) %>
             <%= link_to "Destroy", product_order_path(@product), method: :delete , data: { confirm: "Are you sure?" } %>
 

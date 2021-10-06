@@ -12,8 +12,8 @@ class OrdersController < ApplicationController
   end
 
   def new
-    @product =Product.find(params[:product_id])
-    @order =  @product.orders.new
+   @product =Product.find(params[:product_id])
+   @order =  @product.orders.new
   end
 
   def show

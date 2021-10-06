@@ -1,20 +1,3 @@
 <h1>Payment#index</h1>
-<ul>
-  <% @payment.each do |payment| %>
-    <li>
-      <a href="/Payment/<%= payment.id %>">
-      <a href="<%= payment_path(payment) %>">
 
-      <%= payment.amount %>
-      <%= payment.payment_type %>
-    </li>
-
-<ul>
-  <% @payment.each do |payment| %>
-    <li>
-      <%= link_to payment.payment_type, payment %>
-   </li>
-  <% end %>
-</ul>
-<%= link_to "New pay", new_payments_path %>
 

@@ -1,4 +1,8 @@
-<%= form_with model: @payment do |form| %>
+<h1>Payment</h1>
+
+ <%= form_with model: @payment do |form| %>
+
+
   <div>
     <%= form.label :payment_type %><br>
     <%= form.text_field :payment_type %>
