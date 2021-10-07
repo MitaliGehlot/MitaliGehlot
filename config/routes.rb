@@ -14,6 +14,4 @@ Rails.application.routes.draw do
     resources :orders
     end
    resources :customers
-  resources :payment
-  resources :card
 end

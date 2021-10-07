@@ -2,17 +2,13 @@
   <% @order.each do |order| %>
     <li>
       <a href="/order/<%= product.id %>">
-          <%= product.name %>
+        <%= order.address%>
+      
       </a>
-
-     <ul><li>
-        <%= link_to " edit order",  edit_product_order_path(@product) %>
-
-          <%= link_to "Destroy", product_order_path(@product) %>
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-                </li>
-    </ul>
+      <a href="<%= product_order_path(order)%>">
+        <%= order.amount%> 
+        </a> 
+   
     </li>
   <% end %>
 </ul>

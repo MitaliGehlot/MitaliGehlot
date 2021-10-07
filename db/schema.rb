@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_06_042927) do
+ActiveRecord::Schema.define(version: 2021_10_07_133421) do
 
   create_table "cards", force: :cascade do |t|
     t.integer "card_id"
@@ -38,12 +38,16 @@ ActiveRecord::Schema.define(version: 2021_10_06_042927) do
 
   create_table "orders", force: :cascade do |t|
     t.datetime "date"
-    t.integer "customer_id"
+    t.string "address"
+    t.integer "phone_no"
+    t.float "amount"
+    t.string "payment_type"
+    t.integer "user_id"
     t.integer "product_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["customer_id"], name: "index_orders_on_customer_id"
     t.index ["product_id"], name: "index_orders_on_product_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -73,11 +77,12 @@ ActiveRecord::Schema.define(version: 2021_10_06_042927) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "phon_no"
     t.string "address"
+    t.integer "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "orders", "customers"
   add_foreign_key "orders", "products"
+  add_foreign_key "orders", "users"
   add_foreign_key "products", "categories"
 end

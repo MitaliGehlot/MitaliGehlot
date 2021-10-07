@@ -22,18 +22,18 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @customer =Customer.find(params[:customer_id])
     @product =Product.find(params[:product_id])
     @order = @product.orders.new(order_params)
-     if @order.save
-      redirect_to product_order_path(@product)
+    @order.user=current_user
+    @order.date=DateTime.now
+     if @order.save!
+      redirect_to product_order_path(@product , @order)
     else
       render :new
     end
   end
 
   def edit
-    @customer =Customer.find(params[:customer_id])
     @product =Product.find(params[:product_id])
     @order = Order.find(params[:id])
   end
@@ -42,7 +42,7 @@ class OrdersController < ApplicationController
     @product =Product.find(params[:product_id])
     @order =Order.find(params[:id])
         if @order.update(order_params)
-      redirect_to product_order_path(@product)
+      redirect_to product_order_path(@product , @order)
     else
       render :edit
     end
@@ -53,11 +53,11 @@ class OrdersController < ApplicationController
     @order = @product.orders.find(params[:id])
 
     @order.destroy
-    redirect_to root_path(@product)
+    redirect_to root_path(@product , @order)
   end
 
   private 
     def order_params
-    params.require(:order).permit(:address, :phon_no)
+    params.require(:order).permit(:address, :phone_no, :amount, :payment_type)
 end
 end
