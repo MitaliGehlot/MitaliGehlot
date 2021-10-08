@@ -2,16 +2,21 @@
 
            
  <p><h2><%= @category.category_name %></h2>
+  <% if current_user.admin? %>
   <%= link_to "New Product", new_category_product_path(@category) %>
+  <% end %>
  </p>
 
 <ul>
   <% products.each do |product| %>
-    <li>     
+    <li>
       <%= link_to product.name, category_product_path(@category, product) %>
+      <% if current_user.admin? %>
       <%= link_to "Edit ", edit_category_product_path(@category, product) %>
       <%= link_to "Destroy", category_product_path(@category, product), method: :delete %>
-     </li
+      <% end %>
+        
+      </li
   </ul>
 
  

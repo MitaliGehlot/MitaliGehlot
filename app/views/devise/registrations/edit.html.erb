@@ -32,7 +32,8 @@
   </div>
   <div class="field">
     <%= f.label :role %><br />
-    <%= f.select :role, options_for_select(User.roles, resource.role) %>
+    <%= f.select :role, options_for_select(User.roles, User.roles[resource.role]) %>
+    
   </div>
 
   <div class="actions">

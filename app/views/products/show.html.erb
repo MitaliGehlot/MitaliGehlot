@@ -5,10 +5,9 @@
 
 
      Rs. <%= @product.price %>
-   <%= link_to "order",   new_product_order_path(@product) %>
+      <%= link_to "order",   new_product_order_path(@product) %>
       <%= link_to " Edit ",  edit_product_order_path(@product) %>
-            <%= link_to "Destroy", product_order_path(@product), method: :delete , data: { confirm: "Are you sure?" } %>
-
+            <%= link_to "Cancel", product_order_path(@product), method: :delete , data: { confirm: "Are you sure?" } %>
                 </li>
   </p>                
   </li>

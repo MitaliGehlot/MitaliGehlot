@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'pages/info'
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "categories#index"
 
@@ -14,4 +15,5 @@ Rails.application.routes.draw do
     resources :orders
     end
    resources :customers
+   get 'my_orders', to: 'orders#my_orders'
 end

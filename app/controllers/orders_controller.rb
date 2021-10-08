@@ -3,22 +3,17 @@ class OrdersController < ApplicationController
   def index
    @product =Product.find(params[:product_id])
    @order =  @product.orders.all
-
-  end
-
-  def show
-    @product =Product.find(params[:product_id])
-    @order = Order.find(params[:id])
   end
 
   def new
-   @product =Product.find(params[:product_id])
+   @product = Product.find(params[:product_id])
    @order =  @product.orders.new
   end
 
   def show
     @product =Product.find(params[:product_id])
-    @order =Order.find(params[:id])
+    @order = Order.find(params[:id])
+
   end
 
   def create
@@ -50,11 +45,14 @@ class OrdersController < ApplicationController
 
   def destroy
     @product =Product.find(params[:product_id])
-    @order = @product.orders.find(params[:id])
 
     @order.destroy
-    redirect_to root_path(@product , @order)
+   redirect_to root_path(@product , @order)
   end
+
+  def my_orders
+    @my_orders = current_user.orders
+  end  
 
   private 
     def order_params
