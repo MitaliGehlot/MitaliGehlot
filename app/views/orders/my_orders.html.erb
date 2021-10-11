@@ -1,11 +1,10 @@
 <ul>
   <% @my_orders.each do |order| %>
-    <li>
-     <p>address:- <%= order.address%> , 
-        amount:- <%= order.amount%> ,
-        payment type:- <%= order.payment_type%> ,
-        phone no:- <%= order.phone_no%> 
-    </p>
-    </li>
+   <li>
+    <%= order.address%>
+    <%= order.amount%> 
+    <%= order.payment_type%> 
+    <%= order.phone_no%> 
+      </li>
   <% end %>
 </ul>

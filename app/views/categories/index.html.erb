@@ -6,7 +6,7 @@
 
 <ul>
   <% @categories.each do |category| %>
-    <li>     
+       <li>  
       <%= link_to category.category_name, category %>
       <% if current_user.admin? %>
         <%= link_to "Edit ", edit_category_path(category) %>
