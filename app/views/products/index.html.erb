@@ -1,6 +1,6 @@
 
 <% if current_user.admin? %>
-   <%= link_to "New Product", new_category_product_path(@category) %>
+ <strong>  <%= link_to "New Product", new_category_product_path(@category) %></strong>
 <% end %>          
 
 All Products:
@@ -8,7 +8,7 @@ All Products:
   <% @products.each do |product| %>
     <li>
       <a href="/products/<%= product.id %>">
-          <%= product.name %>
+         <strong> <%= product.name %> </strong>
       </a>       
     </li>
 </ul>

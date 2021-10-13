@@ -1,13 +1,13 @@
 
 <% if current_user.admin? %>
-  <%= link_to "add category", new_category_path %>
+<%= link_to "add category", new_category_path %>
 <% end %>
 
 
 <ul>
   <% @categories.each do |category| %>
-       <li>  
-      <%= link_to category.category_name, category %>
+    <li> 
+     <%= link_to category.category_name, category %>
       <% if current_user.admin? %>
         <%= link_to "Edit ", edit_category_path(category) %>
         <%= link_to "Destroy", category_path(category), method: :delete %>

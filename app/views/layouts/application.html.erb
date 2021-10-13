@@ -13,7 +13,7 @@
   </head>
 
   <body>
-
+  
 _    <p class="navbar-text float-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
@@ -28,6 +28,13 @@ _    <p class="navbar-text float-right">
 <div id=h> 
  <h1 style="text-align: center;">The Online Fashion Shoping Website</h1>
 </div>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
 
 
   
