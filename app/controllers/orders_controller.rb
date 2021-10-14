@@ -56,7 +56,11 @@ class OrdersController < ApplicationController
   def my_orders
     @my_orders = current_user.orders.paginate(page: params[:page],  per_page: 5)
   end  
-
+  
+  def export
+    @my_orders = current_user
+  end 
+   
   private 
     def order_params
     params.require(:order).permit(:address, :phone_no, :amount, :payment_type)
