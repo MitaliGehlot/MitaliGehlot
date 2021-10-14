@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  
+  #include will_paginate
   def index
    @product =Product.find(params[:product_id])
    @order =  @product.orders.all
@@ -54,7 +54,7 @@ class OrdersController < ApplicationController
   end
 
   def my_orders
-    @my_orders = current_user.orders
+    @my_orders = current_user.orders.paginate(page: params[:page],  per_page: 5)
   end  
 
   private 
