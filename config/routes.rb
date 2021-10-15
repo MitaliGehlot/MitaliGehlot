@@ -16,4 +16,5 @@ Rails.application.routes.draw do
     end
    resources :customers
    get 'my_orders', to: 'orders#my_orders'
+   get 'export', to: "orders#export"
 end

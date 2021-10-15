@@ -58,11 +58,11 @@ class OrdersController < ApplicationController
   end  
   
   def export
-    @my_orders = current_user
+    OrderExportWorker.perform_async(current_user.id)
   end 
    
   private 
     def order_params
     params.require(:order).permit(:address, :phone_no, :amount, :payment_type)
-end
-end
+  end
+  end

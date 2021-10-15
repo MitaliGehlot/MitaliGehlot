@@ -29,11 +29,6 @@ _    <p class="navbar-text float-right">
  <h1 style="text-align: center;">The Online Fashion Shoping Website</h1>
 </div>
 
-<% flash.each do |type, msg| %>
-  <div>
-    <%= msg %>
-  </div>
-<% end %>
 
 
 
@@ -49,15 +44,15 @@ _    <p class="navbar-text float-right">
     </div>
   </div>
 </nav>
-
-
-
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
+<% flash.each do |type, msg| %>
+  <div class="<%= type== 'alert' ? 'alert alert-danger' : 'alert alert-success'%>">
+    <%= msg %>
+  </div>
 <% end %>
+
+
+
+
 
 <div class="container">
   <%= yield %>
