@@ -2,7 +2,8 @@ class RegistrationsController < Devise::RegistrationsController
   
 
   def create
-    # add custom create logic here
+    super
+    @user.update(role: params[:user][:role].to_i)
   end
 
   def update

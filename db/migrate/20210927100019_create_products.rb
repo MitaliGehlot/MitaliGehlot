@@ -8,6 +8,6 @@ class CreateProducts < ActiveRecord::Migration[6.1]
       t.references :category, index: true
       t.timestamps
     end
-    add_foreign_key :products, :categories
+    #add_foreign_key :products, :categories
   end
 end

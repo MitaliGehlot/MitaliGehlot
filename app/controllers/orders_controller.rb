@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
     @order.date=DateTime.now
      if @order.save!
       OrderMailer.new_order_email(@order, current_user).deliver_later
-      flash[:success] = "Thank you for your order! We'll get contact you soon!"
+      flash[:success] = "Thank you for your order!"
      redirect_to product_order_path(@product , @order)
     else
      flash.now[:error] = "Your order form had some errors. Please check the form and resubmit."
