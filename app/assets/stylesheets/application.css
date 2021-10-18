@@ -29,7 +29,7 @@ body
   overflow:auto ;
   
 }
-}
+
 
 table th , table td{
     text-align: center;
@@ -38,8 +38,7 @@ table th , table td{
 table tr:nth-child(even){
     background-color:lightblue;
 }
-table tbody tr {
-       }
+
 .pagination a {
   color: black;
   float: left;
@@ -56,10 +55,6 @@ table tbody tr {
 
 }
 .pagination a:hover:not(.active) {background-color: #ddd;}
-.container
-{
-
-}
 .navbar {
   min-height: 38px;
   background-color: #f55e55;
