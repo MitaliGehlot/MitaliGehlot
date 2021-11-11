@@ -19,13 +19,12 @@
 
   <div>
     <%= form.label :amount %><br>
-    <%= form.text_field :amount %>
+    Rs. <%= @product.price %>
+   
   </div>
 
- 
 
   <div>
-
-    <%= form.submit %>
+   <%= form.submit %>
   </div>
 <% end %>

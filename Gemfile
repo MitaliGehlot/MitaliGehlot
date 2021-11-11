@@ -12,6 +12,8 @@ gem 'carrierwave'
 gem 'sidekiq'
 gem 'axlsx'
 gem "axlsx_rails"
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 
 # Use Puma as the app server

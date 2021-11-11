@@ -1,0 +1,12 @@
+<ul style="border: 1px solid darkcyan;">
+  <% @categories.each do |category| %>
+   <div class="list"> <li>
+     <%= link_to category.category_name, category %>
+           <% if current_user.admin? %>
+      <div id="btn">
+      <button> <%= link_to "Edit ", edit_category_path(category) %></button>
+        <button><%= link_to "Destroy", category_path(category), method: :delete %></button></div>
+      <% end %>
+    </li></div>
+  <% end %>
+</ul>

@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_10_11_102014) do
 
-  create_table "cards", force: :cascade do |t|
-    t.integer "card_id"
-    t.float "total_cost"
-    t.integer "quantity"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string "category_name"
     t.datetime "created_at", precision: 6, null: false
@@ -29,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_10_11_102014) do
   create_table "customers", force: :cascade do |t|
     t.string "f_name"
     t.string "l_name"
+    t.string "phon_no"
     t.text "address"
     t.text "email_id"
     t.text "password"
@@ -48,13 +41,6 @@ ActiveRecord::Schema.define(version: 2021_10_11_102014) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["product_id"], name: "index_orders_on_product_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
-  end
-
-  create_table "payments", force: :cascade do |t|
-    t.float "amount"
-    t.string "payment_type"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "products", force: :cascade do |t|

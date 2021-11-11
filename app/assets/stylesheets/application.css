@@ -18,7 +18,8 @@
 
 #h
 {
-  background-color:lightblue;
+  background-color: white;
+  color: darkcyan;
 }
 .pagination {
   display: inline-block;
@@ -27,16 +28,47 @@ body
 {
   min-height: 100%;
   overflow:auto ;
-  
+  background-image: url(bg.jpg);
+
 }
 
+.Search
+{
+  color: darkcyan;
+}
 
+li
+{
+ background-color: white;
+ display: block;
+  color: #000;
+
+  text-decoration: none;
+ list-style-type: none;
+}
+ul{
+ display: block;
+ padding: 0;
+ border-bottom: none;
+}
+li a:hover
+{
+  background-color: darkcyan;
+  color: white;
+}
+li a {
+  display: block;
+  color: darkcyan;
+  padding: 8px 16px;
+  text-decoration: none;
+}
 table th , table td{
     text-align: center;
+    border: 1px solid darkcyan;
 }
 
 table tr:nth-child(even){
-    background-color:lightblue;
+    background-color:darkcyan;
 }
 
 .pagination a {
@@ -58,26 +90,31 @@ table tr:nth-child(even){
 .navbar {
   min-height: 38px;
   background-color: #f55e55;
+  color: darkcyan;
 }
 
 .navbar a.brand { font-size: 18px; }
 .navbar a.brand:hover {
- color: #fff;
+ color: darkcyan;
  background-color: transparent;
  text-decoration: none;
 }
 .container input[type="submit"] {
   height: 30px;
   font-size: 13px;
-  background-color: #f55e55;
+  background-color: #388e8e;
   border: none;
   color: #fff;
 }
+
 footer {
-  background-color: #ebebeb;
+  background-color: white;
   padding: 30px 0;
+  color:darkcyan ;
+  text-align: center;
 }
 footer { margin-top: 100px; }
 table, td, th { vertical-align: middle; border: none; }
-th { border-bottom: 1px solid #DDD; }
+th { border-bottom: 1px solid black; }
 body { margin: 0; }
+

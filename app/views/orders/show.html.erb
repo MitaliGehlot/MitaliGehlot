@@ -1,5 +1,6 @@
-<p><% order=@product.orders%></p>
+<p style="text-align :right;"><button><%= link_to "cancle", product_order_path(@product), method: :delete , data: { confirm: "Are uh sure"} %></button></p>
+<p><%  @product.orders%></p>
 <p><%= @order.address %></p>
 <p><%= @order.phone_no %></p>
-<p><%= @order.amount %></p>
+<p>Rs.<%= @product.price %></p>
 <p><%= @order.payment_type %></p>

@@ -1,18 +1,13 @@
+ 
 
 <ul>
-<li>
-<%= image_tag @product.file.url , :style => "width: 300px" %>
-
-
-                                                              
-   <p><%= @product.name %>
-
-
+  <li>
+     <p style="text-align :right;"> <%= link_to "download pdf",  download_pdf_category_product_path(@category,  @product, format: :pdf) %></p>
+       <%= image_tag @product.file.url , :style => "width: 300px" %>
+      <p  style="color:darkcyan;"><%= @product.name %>
      Rs. <%= @product.price %>
-      <%= link_to "order",   new_product_order_path(@product) %>
-      <%= link_to "Cancel", product_order_path(@product), method: :delete , data: { confirm: "Are you sure?" } %>
-                </li>
-  </p>                
+      <button style="color:darkcyan;"><%= link_to "order",   new_product_order_path(@product) %></button>
   </li>
+  </p>                
 </ul>
 

@@ -1,19 +1,17 @@
 class OrdersController < ApplicationController
   #include will_paginate
+  before_action :set_product, only: [:index, :new, :show, :edit, :update, :destroy]
+
   def index
-   @product =Product.find(params[:product_id])
    @order =  @product.orders.all
   end
 
   def new
-   @product = Product.find(params[:product_id])
    @order =  @product.orders.new
   end
 
   def show
-    @product =Product.find(params[:product_id])
     @order = Order.find(params[:id])
-
   end
 
   def create
@@ -22,7 +20,7 @@ class OrdersController < ApplicationController
     @order.user=current_user
     @order.date=DateTime.now
      if @order.save!
-      OrderMailer.new_order_email(@order, current_user).deliver_later
+     OrderMailer.with(order: @order).new_order_email.deliver_later
       flash[:success] = "Thank you for your order!"
      redirect_to product_order_path(@product , @order)
     else
@@ -32,12 +30,10 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @product =Product.find(params[:product_id])
     @order = Order.find(params[:id])
   end
 
   def update
-    @product =Product.find(params[:product_id])
     @order =Order.find(params[:id])
         if @order.update(order_params)
       redirect_to product_order_path(@product , @order)
@@ -47,22 +43,32 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    @product =Product.find(params[:product_id])
-
+    @order =Order.find(params[:id])
     @order.destroy
-   redirect_to root_path(@product , @order)
+   redirect_to root_path ( @order)
   end
 
   def my_orders
     @my_orders = current_user.orders.paginate(page: params[:page],  per_page: 5)
   end  
   
+  def user_orders
+    @order = Order.all
+    @order = @order.paginate(page: params[:page],  per_page: 5)
+  end 
+   
   def export
     OrderExportWorker.perform_async(current_user.id)
   end 
    
   private 
-    def order_params
+
+  def order_params
     params.require(:order).permit(:address, :phone_no, :amount, :payment_type)
   end
+
+  def set_product
+    @product =Product.find(params[:product_id])
+  end 
+
   end

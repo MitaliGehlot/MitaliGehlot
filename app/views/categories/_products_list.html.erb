@@ -1,0 +1,11 @@
+<ul style="border: 1px solid darkcyan;">
+  <% products.each do |product| %>
+    <li>
+      <%= link_to product.name, category_product_path(@category, product) %>
+      <% if current_user.admin? %>
+        <button><%= link_to "Edit ", edit_category_product_path(@category, product) %></button>
+        <button><%= link_to "Destroy", category_product_path(@category, product), method: :delete %></button>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

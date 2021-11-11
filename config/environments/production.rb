@@ -116,5 +116,17 @@ Rails.application.configure do
   # these configuration options.
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
-  # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+    # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+# Disable Rails's static asset server (Apache or nginx will already do this)  
+config.serve_static_assets = false
+
+# Compress JavaScripts and CSS  
+config.assets.compress = true
+
+# Don't fallback to assets pipeline if a precompiled asset is missed  
+
+# Generate digests for assets URLs  
+config.assets.digest = true
+host = 'localhost:3000'
+config.action_mailer.default_url_options = { :host => 'localhost:3000', protocol: 'http' }
 end
