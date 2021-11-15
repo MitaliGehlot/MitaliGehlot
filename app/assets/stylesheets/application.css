@@ -18,8 +18,9 @@
 
 #h
 {
-  background-color: white;
+  background-color: whitesmoke;
   color: darkcyan;
+  text-align:center;
 }
 .pagination {
   display: inline-block;
@@ -28,7 +29,9 @@ body
 {
   min-height: 100%;
   overflow:auto ;
-  background-image: url(bg.jpg);
+  background-image: url("https://cdn.pixabay.com/photo/2017/03/13/17/26/ecommerce-2140603__340.jpg");
+  background-size: cover;
+  height: 800px;
 
 }
 
@@ -39,7 +42,7 @@ body
 
 li
 {
- background-color: white;
+ background-color: whitesmoke;
  display: block;
   color: #000;
 
@@ -68,7 +71,7 @@ table th , table td{
 }
 
 table tr:nth-child(even){
-    background-color:darkcyan;
+    background-color:whites;
 }
 
 .pagination a {
@@ -88,15 +91,15 @@ table tr:nth-child(even){
 }
 .pagination a:hover:not(.active) {background-color: #ddd;}
 .navbar {
-  min-height: 38px;
-  background-color: #f55e55;
+  min-height: 50px;
+  background-color: white;
   color: darkcyan;
 }
 
-.navbar a.brand { font-size: 18px; }
+.navbar a.brand { font-size: 25px; }
 .navbar a.brand:hover {
  color: darkcyan;
- background-color: transparent;
+ background-color: white;
  text-decoration: none;
 }
 .container input[type="submit"] {
@@ -108,7 +111,7 @@ table tr:nth-child(even){
 }
 
 footer {
-  background-color: white;
+  background-color: whitesmoke;
   padding: 30px 0;
   color:darkcyan ;
   text-align: center;

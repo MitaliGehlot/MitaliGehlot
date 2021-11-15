@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
     @order.user=current_user
     @order.date=DateTime.now
      if @order.save!
-     OrderMailer.with(order: @order).new_order_email.deliver_later
+    OrderMailer.new_order_email(current_user.id, @order.id).deliver
       flash[:success] = "Thank you for your order!"
      redirect_to product_order_path(@product , @order)
     else
