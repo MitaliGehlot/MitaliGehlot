@@ -43,9 +43,10 @@ class ProductsController < ApplicationController
       render template: "products/order_pdf.html.erb",
          pdf: "product: #{@product.name}"
       end
-    end
   end
+end
 
+                                                                                                                                                  
 
     private 
 

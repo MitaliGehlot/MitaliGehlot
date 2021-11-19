@@ -6,7 +6,9 @@
        <%= image_tag @product.file.url , :style => "width: 300px" %>
       <p  style="color:darkcyan;"><%= @product.name %>
      Rs. <%= @product.price %>
-      <button style="color:darkcyan;"><%= link_to "order",   new_product_order_path(@product) %></button>
+    <button style="color:darkcyan;"><%= link_to "order",   new_product_order_path(@product) %></button>
+<button style="color:darkcyan;"><%= link_to "wishlist", new_product_wishlist_path(@product) %></button>
+
   </li>
   </p>                
 </ul>

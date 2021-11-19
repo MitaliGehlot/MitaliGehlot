@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'search', to: 'products#search'
   get 'categories_search', to: 'categories#search'
   get 'products/:id', to: 'products#downloadpdf'
-
   resources :categories do
     resources :products do 
       get :download_pdf, on: :member
@@ -17,9 +16,12 @@ Rails.application.routes.draw do
    resources :products do 
     resources :orders
     end
+    resources :products do
+      resources :wishlist
+    end
    resources :customers
    get 'my_orders', to: 'orders#my_orders'
    get 'export', to: "orders#export" 
    get 'user_orders', to: 'orders#user_orders'
-
+   get 'mywishlist',to: 'wishlist#mywishlist'
 end

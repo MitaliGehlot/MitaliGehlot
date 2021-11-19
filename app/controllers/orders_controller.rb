@@ -26,18 +26,19 @@ class OrdersController < ApplicationController
     else
      flash.now[:error] = "Your order form had some errors. Please check the form and resubmit."
      render :new
-    end
-  end
+   end
+  end 
 
   def edit
-    @order = Order.find(params[:id])
-  end
+   @order = Order.find(params[:id])
+  end 
 
   def update
     @order =Order.find(params[:id])
         if @order.update(order_params)
       redirect_to product_order_path(@product , @order)
     else
+
       render :edit
     end
   end
@@ -60,6 +61,8 @@ class OrdersController < ApplicationController
   def export
     OrderExportWorker.perform_async(current_user.id)
   end 
+
+
    
   private 
 

@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   mount_uploader :file, ProductFileUploader
   belongs_to :category
   has_many :orders
-
+  has_one :wishlist
  
 
   def self.search(search, category_id)
